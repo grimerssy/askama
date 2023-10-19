@@ -26,7 +26,7 @@ serde-json = ["askama_derive/serde-json", "askama_escape/json", "serde", "serde_
 serde-yaml = ["askama_derive/serde-yaml", "serde", "serde_yaml"]
 urlencode = ["askama_derive/urlencode", "percent-encoding"]
 with-actix-web = ["askama_derive/with-actix-web"]
-with-axum = ["askama_derive/with-axum"]
+with-axum = ["askama_derive/with-axum", "dep:axum-core", "dep:http"]
 with-gotham = ["askama_derive/with-gotham"]
 with-hyper = ["askama_derive/with-hyper"]
 with-mendes = ["askama_derive/with-mendes"]
@@ -48,6 +48,8 @@ percent-encoding = { version = "2.1.0", optional = true }
 serde = { version = "1.0", optional = true, features = ["derive"] }
 serde_json = { version = "1.0", optional = true }
 serde_yaml = { version = "0.9", optional = true }
+axum-core = { version = "0.3", optional = true }
+http = { version = "0.2", optional = true }
 
 [package.metadata.docs.rs]
 features = ["config", "humansize", "num-traits", "serde-json", "serde-yaml"]

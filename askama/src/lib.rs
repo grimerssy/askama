@@ -66,11 +66,13 @@
 mod error;
 pub mod filters;
 pub mod helpers;
+mod integrations;
 
 use std::fmt;
 
 pub use askama_derive::Template;
 pub use askama_escape::{Html, MarkupDisplay, Text};
+pub use integrations::*;
 
 #[doc(hidden)]
 pub use crate as shared;

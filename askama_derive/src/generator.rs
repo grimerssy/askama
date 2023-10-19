@@ -407,13 +407,13 @@ impl<'a> Generator<'a> {
     // Implement Axum's `IntoResponse`.
     #[cfg(feature = "with-axum")]
     fn impl_axum_into_response(&mut self, buf: &mut Buffer) -> Result<(), CompileError> {
-        self.write_header(buf, "::askama_axum::IntoResponse", None)?;
+        self.write_header(buf, "::askama::axum::IntoResponse", None)?;
         buf.writeln("#[inline]")?;
         buf.writeln(
             "fn into_response(self)\
-             -> ::askama_axum::Response {",
+             -> ::askama::axum::Response {",
         )?;
-        buf.writeln("::askama_axum::into_response(&self)")?;
+        buf.writeln("::askama::axum::into_response(&self)")?;
         buf.writeln("}")?;
         buf.writeln("}")
     }
